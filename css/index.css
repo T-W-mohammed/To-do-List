@@ -1,0 +1,305 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: cursive;
+	background-color:var(--body-background);
+	color: var(--color);
+	background-position:fixed;
+}
+:root{
+	--body-background: #192a56;
+	--content-background:#273c75;
+	--main-transition:1s;
+	--delete-color:#c23616;
+	--color: #fff;
+	--green-color:#44bd32;
+	--yellow-color:#fbc531;
+
+};
+
+html{
+	scroll-behavior: smooth;
+}
+button{
+	border:none;
+	outline: none;
+	cursor: pointer;
+}
+.container{
+	padding: 20px 0;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-right:  auto;
+	margin-left:   auto;
+	border-radius: 15px;
+	margin-bottom: 20px;
+
+}
+
+@media(min-width: 768px){
+	.container{
+		width: 750px;
+	}
+
+}
+@media(min-width: 992px){
+	.container{
+		width:970px;
+	}	
+}
+@media(min-width: 1200px){
+	.container{
+		width:1170px;
+	}
+}
+.container .day select{
+	width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    outline: none;
+}
+
+.container_days > div{
+	margin-bottom: 10px;
+	background-color: var(--content-background);
+	border-radius: 14px;
+	padding: 10px 10px;
+	transform: translateY(40px);
+    opacity: 0;
+    transition: all var(--main-transition) ease-in-out;
+    direction: rtl;
+
+}
+.container_days > div > div{
+
+	
+	padding: 10px;
+    border-radius: 14px;
+
+
+}
+.container_days > div .innerDayContent{
+	display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: var(--body-background);
+    padding: 10px;
+    border-radius: 10px;
+}
+.container_days > div .innerDayContent section{
+	width: 100%;
+	display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 62px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--main-transition) ease-in-out;
+}
+.container_days > div .innerDayContent section.shrink{
+	height: 20px;
+	transition: height 2s ease-in-out;
+}
+@keyframes height{
+	from{height: 20px;}
+	to{
+		height: auto;
+	}
+}
+
+.container_days > div .innerDayContent > div,
+.container_days > div .innerDayContent section > div{
+	margin: 5px;
+	text-align: center;
+	background-color: var(--content-background);
+	border-radius: 6px;
+	padding: 11px;
+
+}
+.container_days > div .innerDayContent section > div{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;}
+.container_days > div .innerDayContent  .last-modify,
+.container_days > div .innerDayContent  .day{
+	direction: ltr;
+	
+}
+.container_days > div .innerDayContent section .icons{
+	position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.innerDayContent section .icons:hover svg{
+	transform: rotate3d(0,0, 1, 223deg);
+	transition: var(--main-transition) ease-in-out;
+}
+.container_days > div .innerDayContent .management{
+	width: 100%
+}
+.container_days > div .innerDayContent .management button{
+	padding: 10px 20px;
+    background-color: var(--green-color);
+    color: var(--color);
+    border-radius: 5px;
+    width: 49%;
+}
+.container_days > div .innerDayContent .management button:nth-child(2){
+	background-color: var(--delete-color);
+}
+.container_days > div .innerDayContent .management button:last-child{
+	width: 100%;
+    margin-top: 10px;
+    display: block;
+    background-color: #00ff05;
+    font-size: 20px;
+}
+.container_days > div .innerDayContent .Delete button{
+	background-color: var(--delete-color);
+	color: var(--color);
+	padding: 10px 20px;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+.container_days > div .innerDayContent .Delete {
+	width: 100%;
+	flex-direction: row;
+	gap:5px;
+}
+.container_days > div .innerDayContent .Delete button{
+	flex:1 0 49%;
+}
+.container_days > div .innerDayContent .Delete button:first-child{
+	background-color: var(--yellow-color);
+}
+.container_days > div.active{
+	transform: translateY(0);
+	opacity: 1;
+}
+.container_days > div .innerDayContent .Edit-student button{
+	padding: 10px 20px;
+    border-radius: 10px;
+    color: var(--color);
+    background-color: var(--green-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.container_days > div .innerDayContent .note{
+	flex: 1 0 100%;
+	padding:6px;
+}
+.container_days > div .innerDayContent .note ul{
+	padding: 0;
+	list-style: circle;
+    width: 100%;
+    padding: 7px;
+    border-radius: 12px;
+}
+.container_days > div .innerDayContent .note ul li{    
+	display: flex;
+    justify-content: space-between;
+}
+.container_days > div .innerDayContent .note ul li p{
+	padding: 0 11px;
+    background: var(--body-background);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+}
+.container_days > div .innerDayContent .note button{
+	background-color: var(--delete-color);
+    color: var(--color);
+    padding: 6px 15px;
+    border-radius: 5px;
+}
+.container_days > div .day-head{
+	width:fit-content;
+	margin:10px auto 30px;
+
+}
+/*Add student*/
+.custom-classinput > div{
+	direction: rtl;
+    padding: 17px;
+    background-color: var(--content-background);
+    border-radius: 13px;
+}
+.custom-classinput input,
+.custom-classinput button,
+.custom-classinput select{
+	display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 13px;
+    padding: 15px 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    background-color: var(--body-background);
+    color: #fff;
+}
+.custom-classinput input{
+	
+}
+.custom-classinput button{
+	background-color: var(--green-color);
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.custom-classinput button.prevent{
+	cursor: not-allowed;
+	background-color: #e84118;
+}
+.Pupop_All_Student_lesson{
+	
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 100;
+    background-color: var(--body-background);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition) ease-in-out;
+
+}
+.Pupop_All_Student_lesson .info{
+	padding: 15px;
+}
+.Pupop_All_Student_lesson .conDetails{
+
+	display: flex;
+    justify-content: center;
+    flex-direction:column;
+    margin-bottom: 13px;
+    background: var(--content-background);
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+}
+.Pupop_All_Student_lesson .class_button{
+    width: 90%;
+    margin: 10px auto 0;
+    padding: 10px 24px;
+    cursor: pointer;
+    font-size: 33px;
+    background-color: var(--delete-color);
+    border-radius: 20px;
+    text-align: center;
+}
+

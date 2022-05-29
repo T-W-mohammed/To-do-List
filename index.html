@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Lessons_app</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+	<div class="container width-div">
+		<div class='day'>
+			<select>
+			</select>
+		</div>
+	</div>
+	<div class="container container_days"></div>
+	<div class="container add-student custom-classinput">
+		<h1>Add Student</h1>
+		<div>
+			<input type="text" onkeypress="checkValue()" class="add-name" placeholder="add the Name of Student"/>
+			<input type="text"onkeypress="checkValue()" class="add-location" placeholder="add the location of Student" />
+			<input type="text"onkeypress="checkValue()" class="add-price" placeholder="add-price" />
+			<button class="prevent"  onclick="setSubmit()">
+				<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+			    <path fill="currentColor" d="M7,7H11V9H7A3,3 0 0,0 4,12A3,3 0 0,0 7,15H11V17H7A5,5 0 0,1 2,12A5,5 0 0,1 7,7M17,7A5,5 0 0,1 				22,12H20A3,3 0 0,0 17,9H13V7H17M8,11H16V13H8V11M17,12H19V15H22V17H19		V20H17V17H14V15H17V12Z" />
+				</svg>add
+			</button>
+			
+		</div>
+	</div>
+	<div class="container EditStudent custom-classinput">
+		<h1>Edit Student</h1>
+			<div>
+				<input type="" class="Edit-name" name=""placeholder="Edit-name" >
+				<input type="" class="Edit-location" name=""placeholder="Edit-location" >
+				<input type="hidden" class="student_id" name=""placeholder="Edit-location" >
+				<input type="" class="Edit-note" name=""placeholder="Edit-note" >
+				<div class="change_day">
+					<select></select>
+				</div>
+				<button  class="prevent" onclick="saveEdit()">
+				<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+				    <path fill="currentColor" d="M5,3C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19H5V5H12V3H5M17.78,4C17.61,4 17.43,4.07 17.3,4.2L16.08,5.41L18.58,7.91L19.8,6.7C20.06,6.44 20.06,6 19.8,5.75L18.25,4.2C18.12,4.07 17.95,4 17.78,4M15.37,6.12L8,13.5V16H10.5L17.87,8.62L15.37,6.12Z" />
+				</svg> 
+				Edit</button>
+			</div>
+	</div>
+	<div class="Pupop_All_Student_lesson">
+		<div class="class_button">
+			x
+		</div>
+		<div class="info"></div>
+	</div>
+<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
